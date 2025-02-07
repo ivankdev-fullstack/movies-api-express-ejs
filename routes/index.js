@@ -7,7 +7,6 @@ const { API_BASE_URL, API_KEY } = process.env;
 
 const nowPlayingUrl = `${API_BASE_URL}/movie/now_playing?api_key=${API_KEY}`;
 
-/* GET home page. */
 router.get("/", function (req, res, next) {
   request.get(nowPlayingUrl, (err, res, data) => {
     const parsedData = JSON.parse(data);
