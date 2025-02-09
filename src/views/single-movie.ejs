@@ -1,7 +1,7 @@
-<% include head %>
+<%- include('head') %>
 </head>
 <body>
-	<% include navbar %>
+	<%- include('navbar') %>
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-8 col-sm-offset-2 text-center">
@@ -13,11 +13,19 @@
 					<%= movie.tagline %>
 				</h3>
 
-				<a href="<%= movie.homepage %>"><img src="<%= imageBaseUrl+movie.poster_path %>" /></a>
+				<div class="col-md-3 col-sm-3">
+					<a href="<%= movie.homepage %>">
+						<img class="img-responsive img-thumbnail" src="<%= imageBaseUrl %><%= movie.poster_path %>" alt="Movie Poster"/>
+					</a>
+				</div>
 				
-				<p class="overview-header">Movie Synopsis: <span class="single-movie-overview">
-					<%= movie.overview %>
-				</span></p>
+				
+				<p class="overview-header">
+					Movie Synopsis:
+					<span class="single-movie-overview">
+						<%= movie.overview %>
+					</span>
+				</p>
 			</div>
 		</div>
 	</div>
@@ -50,7 +58,6 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
